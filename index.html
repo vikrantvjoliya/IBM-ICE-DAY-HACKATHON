@@ -1,0 +1,31 @@
+<<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login Admin Page::</title>
+  </head>
+  <?php
+    error_reporting(0);
+    $msg = function($m){
+      switch($m){
+        case 21:
+        echo "<script>alert('your password not match')</script>";
+
+        break;
+        case 31:
+        echo "<script>alert('your Username not match')</script>";
+    }
+  };
+  $msg($_GET['msg']);
+  ?>
+  <body>
+<div id='form'>
+  <form method='post' action="admin.php">
+    <p><<input type="text" name="Username" placeholders="Username" require></p>
+    <p><<input type="password" name="password" placeholders="password" require></p>
+    <p><<input type="submit" value="Login" name="Login" placeholders="USER-NAME" require></p>
+  </form>
+
+</div>
+  </body>
+</html>
